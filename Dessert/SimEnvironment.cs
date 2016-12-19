@@ -454,7 +454,7 @@ namespace DIBRIS.Dessert
             /// <summary>
             ///   The minimum value which can be assigned to the scaling factor.
             /// </summary>
-            public static double MinScalingFactor { get; } = 0.01;
+            public static double MinScalingFactor { get; } = 0.0001;
 
             /// <summary>
             ///   The default scaling factor.
@@ -498,7 +498,7 @@ namespace DIBRIS.Dessert
                 set
                 {
                     // Preconditions
-                    RaiseArgumentOutOfRangeException.IfIsLessOrEqual(value, MinScalingFactor, nameof(value));
+                    RaiseArgumentOutOfRangeException.IfIsLess(value, MinScalingFactor, nameof(value));
                     RaiseInvalidOperationException.If(Locked, ErrorMessages.ScalingFactorNotUpdatable);
 
                     _scalingFactor = value;
