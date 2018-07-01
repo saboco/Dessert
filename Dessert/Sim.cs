@@ -179,7 +179,7 @@ namespace DIBRIS.Dessert
             // Preconditions
             RaiseArgumentNullException.IfIsNull(realTimeOptions, nameof(realTimeOptions));
             RaiseArgumentNullException.IfIsNull(realTimeOptions.WallClock, nameof(realTimeOptions.WallClock));
-            RaiseArgumentOutOfRangeException.IfIsLessOrEqual(realTimeOptions.ScalingFactor, SimEnvironment.RealTimeOptions.MinScalingFactor, nameof(realTimeOptions.ScalingFactor));
+            RaiseArgumentOutOfRangeException.IfIsLess(realTimeOptions.ScalingFactor, SimEnvironment.RealTimeOptions.MinScalingFactor, nameof(realTimeOptions.ScalingFactor));
 
             var env = Environment(System.Environment.TickCount);
             env.RealTime.Enabled = true;
@@ -207,7 +207,7 @@ namespace DIBRIS.Dessert
             // Preconditions
             RaiseArgumentNullException.IfIsNull(realTimeOptions, nameof(realTimeOptions));
             RaiseArgumentNullException.IfIsNull(realTimeOptions.WallClock, nameof(realTimeOptions.WallClock));
-            RaiseArgumentOutOfRangeException.IfIsLessOrEqual(realTimeOptions.ScalingFactor, SimEnvironment.RealTimeOptions.MinScalingFactor, nameof(realTimeOptions.ScalingFactor));
+            RaiseArgumentOutOfRangeException.IfIsLess(realTimeOptions.ScalingFactor, SimEnvironment.RealTimeOptions.MinScalingFactor, nameof(realTimeOptions.ScalingFactor));
 
             var env = Environment(seed);
             env.RealTime.Enabled = true;
